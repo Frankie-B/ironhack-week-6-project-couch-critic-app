@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
             res.send('Invalid Credentials');
           } else {
             req.session.currentUser = user;
-            res.redirect('/movies'); // -> if comparison passes then redirect to the movies page
+            res.redirect('/user/profile'); // -> if comparison passes then redirect to the movies page
           }
         });
       }

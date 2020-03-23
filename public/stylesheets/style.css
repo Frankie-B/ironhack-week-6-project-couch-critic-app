@@ -1,8 +1,9 @@
+@import './footer.css';
 @import './login.css';
 @import './signup.css';
+@import './buttons.css';
 @import './nav.css';
 @import './main.css';
-@import './buttons.css'
 
 /* colours:
 dark blue = #182631
