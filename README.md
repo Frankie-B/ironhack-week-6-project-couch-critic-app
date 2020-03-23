@@ -1,9 +1,13 @@
-# ironhack-week-6-project-movie-app
+# ironhack-week-6-project-movie-app (MovieBuddies)
 
-## Our App name goes here
+## MovieBuddies
 
-Alt-H1 Module 2 Project - Full Stack - Movie Goer App Created by Miranda Kamp &amp; Francis Bukenya
+### Module 2 Project - Full Stack - Movie Goer App Created by Miranda Kamp &amp; Francis Bukenya
 
 Write description about our app below here:
+
+Features:
+
+Link:
 
 [App title](https://google.com)
