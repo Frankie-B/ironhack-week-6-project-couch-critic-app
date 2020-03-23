@@ -1,5 +1,10 @@
-@import './footer.css';
 @import './login.css';
 @import './signup.css';
 @import './nav.css';
 @import './main.css';
+@import './buttons.css'
+
+/* colours:
+dark blue = #182631
+light blue = #66858E
+beige = #79492B */
