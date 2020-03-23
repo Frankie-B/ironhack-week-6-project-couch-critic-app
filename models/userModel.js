@@ -8,12 +8,12 @@ const userSchema = new Schema(
     password: String,
   },
   {
-    friends: [{ type: ObjectId, ref: 'users' }],
+    //friends: [{ type: ObjectId, ref: 'users' }],
   },
   {
     rated_movies: [
       {
-        movie_rate: imdbID,
+        // movie_rate: imdbID,
         title: String,
         thumbnail: String,
         director: String,

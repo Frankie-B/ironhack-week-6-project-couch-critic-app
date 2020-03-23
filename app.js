@@ -4,11 +4,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
-//
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // dependencies for cookie sessions
 const session = require('express-session');
@@ -40,14 +39,14 @@ mongoose
     console.log('Unexpected error, connection failed!', error);
   });
 
-// Protection function for routes if user is not logged in
-// function protect(req, res, next) {
-//   if (req.session.currentUser) {
-//     next();
-//   } else {
-//     res.redirect('/user/login');
-//   }
-// }
+//Protection function for routes if user is not logged in
+function protect(req, res, next) {
+  if (req.session.currentUser) {
+    next();
+  } else {
+    res.redirect('/user/login');
+  }
+}
 
 // Setting up Handlebars
 app.set('view engine', 'hbs');
