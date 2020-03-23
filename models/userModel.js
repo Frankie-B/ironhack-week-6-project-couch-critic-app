@@ -8,13 +8,14 @@ const userSchema = new Schema(
     password: String,
   },
   {
-    friends: [ObjectId]((ref: users)),
+    friends: [{ type: ObjectId, ref: 'users' }],
   },
   {
     rated_movies: [
       {
         movie_rate: imdbID,
         title: String,
+        thumbnail: String,
         director: String,
         year: Number,
         rate: Number,

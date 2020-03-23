@@ -11,20 +11,20 @@ const hbs = require('hbs');
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 // dependencies for cookie sessions
-// const session = require('express-session');
-// const MongoStore = require('connect-mongo')(session);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 //Starting cookie session for user
-//app.use(
-//session({
-//secret: 'basic-auth-secret',
-//cookie: { maxAge: 60000 },
-//store: new MongoStore({
-//mongooseConnection: mongoose.connection,
-//ttl: 24 * 60 * 60, // (1 day) time to live = how long the cookie will be valid
-//}),
-//})
-//);
+app.use(
+  session({
+    secret: 'basic-auth-secret',
+    cookie: { maxAge: 60000 },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60, // (1 day) time to live = how long the cookie will be valid
+    }),
+  })
+);
 
 // Connection to the database
 mongoose
@@ -59,6 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.use('/', require('./routes/index'));
+app.use('/user', require('./routes/user'));
 
 // listening on port 3000
 app.listen(process.env.PORT, () => {
