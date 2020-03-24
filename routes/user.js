@@ -69,4 +69,8 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/profile', (req, res) => {
+  res.render('user/profile');
+});
+
 module.exports = app;
