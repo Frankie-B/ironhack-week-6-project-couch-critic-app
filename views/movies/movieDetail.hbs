@@ -1,32 +1,23 @@
-<h1>check out movie details</h1>
 
-{{!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <h1>Movie details</h1>
-      <div class="search">
-       <input type="text" class="search-input" placeholder="searchMovie" />
-         <button id="search-btn" type="submit" class="searchButton">
-          Search movie
-         </button>
-       </div>
-    <div id="title"></div>
-    <div id="year"></div>
-    <div id="released"></div>
-    <div id="director"></div>
-    <div id="poster"></div>
-    <div ide="error"></div>
+<h1>Movie details</h1>
+<div class="search">
+  <form action="/movieDetail" method="POST">
+    <input type="text" id="search-input" name="movieSearch" placeholder="searchMovie" />
+    <button id="search-btn" type="submit" class="searchButton">
+    Search movie
+    </button>
+    <h1>check out movie details</h1>
+  </form> 
+</div>
 
-    <script src="/public/javascripts/movies.js"></script>
-  </body>
-</html> --}}
+{{#each movies}}
 
-      {{!-- <ul></ul>
-    {{!-- </div>
-    <div id="error"></div> --}}
+{{/movie}}
+<div id="title"></div>
+<div id="year"></div>
+<div id="released"></div>
+<div id="director"></div>
+<div id="poster"></div>
+<div ide="error"></div>
+
+<script src="/public/javascripts/movies.js"></script>

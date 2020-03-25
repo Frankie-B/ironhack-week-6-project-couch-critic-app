@@ -2,29 +2,27 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 
-app.get('/moviedetail', (req, res) => {
-  res.render('movies/movieDetail');
-});
-
-let $input = document.querySelector('.search-input');
-let $button = document.querySelector('#search-btn');
-let $error = document.querySelector('#error');
-$button.addEventListener('click', () => {
-  let movieSearch = $input.value;
-
-    axios
-        .get(`http://www.omdbapi.com/?t=${movieSearch}&APIkey=a4adc5f`)
+app.post('/moviedetail', (req, res) => {
+      axios
+        .get(`http://www.omdbapi.com/?t=${req.body.movieSearch}&APIkey=a4adc5f`)
         .then(apiResponse => {
-            let movieData = apiResponse.data;
-
-            let $movieTitle = document.querySelector('#title');
-            $movieTitle.src = movieData.title;
-
+          let movieData = apiResponse.data;
+          res.render('movies/movieDetail', {movies: movieData});
         })
-    .catch(err => {
-      $error.innerHTML = 'movie cannot be found in database';
-    });
+        .catch(err => {});
+  
 });
+
+
+app.get("/moviedetail", (req,res)=> {
+
+ res.render('movies/movieDetail');
+
+})
+
+
+
+
 
 module.exports = app;
 
