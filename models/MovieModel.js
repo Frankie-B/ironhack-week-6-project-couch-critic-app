@@ -3,9 +3,7 @@ const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
   Title: String,
-  Year: String,
-  Director: String,
-  Rate: Number
+  Rating: Number,
 });
 
 const Movie = mongoose.model('movies', movieSchema);

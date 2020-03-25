@@ -24,12 +24,32 @@ app.get('/moviedetail', (req, res) => {
 app.get('/moviesrated', (req, res) => {
   Movie.find()
     .then(moviesData => {
-      res.render('movies/moviesMongoDB', { moviesHbs: moviesData });
+      res.render('movies/moviesRated', { moviesHbs: moviesData });
     })
     .catch(err => {
       res.send('error');
     });
 });
+
+
+app.get('/addmovie', (req, res) => {
+  res.render('movies/addMovie');
+});
+
+app.post('/addmovie', (req, res) => {
+  console.log(req.body);
+  Movie.create({
+    Title: req.body.title,
+    Rating: req.body.rating,
+  })
+    .then(moviesData => {
+      res.render('movies/moviesRated', { moviesHbs: moviesData });
+    })
+    .catch(err => {
+      res.send('error');
+    });
+});
+
 
 // app.get('/movie/detail/:movieId', (req, res) => {
 //   Movie.findById(req.params.movieId)
