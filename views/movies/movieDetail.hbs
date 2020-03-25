@@ -11,13 +11,12 @@
 </div>
 
 {{#each movies}}
+{{/each}}
 
-{{/movie}}
-<div id="title"></div>
-<div id="year"></div>
-<div id="released"></div>
-<div id="director"></div>
-<div id="poster"></div>
-<div ide="error"></div>
+<img src="{{movie.Poster}}" alt="poster">
+ <h1>{{movie.Title}}</h1>
+ <p>This movie was directed by {{movie.Director}} released on {{movie.Released}}. </p>
+
+<div id="error"></div>
 
 <script src="/public/javascripts/movies.js"></script>
