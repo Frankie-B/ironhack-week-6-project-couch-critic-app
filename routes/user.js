@@ -3,28 +3,28 @@ const app = express();
 const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 
-// const multer = require('multer');
-// const upload = multer({ dest: 'uploads/' });
-
 // GET request for user route
 app.get('/signup', (req, res) => {
   res.render('user/signup');
 });
 
-//User signup with auth.        |---------- to run middleware to better handle the errors
+//User signup with auth.
 app.post('/signup', (req, res, next) => {
-  const { username, password } = req.body; // ES6 destructuring syntax
+  const { username, password, firstName, lastName, email } = req.body;
   bcrypt.hash(password, 10, function(error, hash) {
     if (error) {
-      next('Hashing error'); // next() - error message.
+      next('Hashing error');
     } else {
       User.create({
         // add file_upload here
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
         username: username,
-        password: hash, // -> hashing the user created password before it goes to the db
+        password: hash,
       })
         .then(user => {
-          res.redirect('/user/login'); // -> Redirecting to the user login.hbs page.
+          res.redirect('/user/login');
         })
         .catch(error => {
           res.send('User not create', error);
@@ -39,13 +39,12 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { username, password } = req.body; // -> ES6 destructuring
+  const { username, password } = req.body;
   User.findOne({
-    username: username, // shorthand notation of this would be just username,
+    username: username,
   })
     .then(user => {
       if (!user) {
-        // if the username is not correct
         res.send('Invalid Credentials');
       } else {
         bcrypt.compare(password, user.password, function(
@@ -55,11 +54,10 @@ app.post('/login', (req, res) => {
           if (error) {
             next('Hash compare error');
           } else if (!correctPassword) {
-            // if the password is incorrect
             res.send('Invalid Credentials');
           } else {
             req.session.currentUser = user;
-            res.redirect('/user/profile'); // -> if comparison passes then redirect to the movies page
+            res.redirect('/user/profile');
           }
         });
       }
