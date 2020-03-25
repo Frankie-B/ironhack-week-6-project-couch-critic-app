@@ -59,6 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user'));
+app.use('/', require('./routes/movies'));
 
 // listening on port 3000
 app.listen(process.env.PORT, () => {
