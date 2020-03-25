@@ -1,5 +1,14 @@
-<form action="/user/login" method="POST">
-    <input type="text" name="username" placeholder="username" />
-    <input type="password" name="password" placeholder="password" />
-    <button type="submit">Login</button>
-</form>
+<div class="login-container container-fluid row">
+    <div class="col">
+      <form action="/user/login" method="POST">
+      <input type="text" name="username" placeholder="username" />
+      <input type="password" name="password" placeholder="password" />
+      <button type="submit">Login</button>
+      <div class="signup-small-container">
+        <small class="signup-small">Dont already have an account? <a href="/user/signup" class="signup-link">Sign Up</a> to log in</small>
+      </div>
+    </form>
+  </div>
+</div>
+
+
