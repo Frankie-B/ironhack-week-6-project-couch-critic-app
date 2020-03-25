@@ -63,7 +63,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user'));
-app.use('/friends', require('./routes/friends'));
+app.use('/user', require('./routes/friends'));
 app.use('/', require('./routes/logout'));
 
 // listening on port 3000
