@@ -6,7 +6,7 @@ const User = require('../models/userModel');
 // Displaying ALL the friends from the user database
 app.get('/friends', (req, res) => {
   User.find({}).then(friendsData => {
-    res.render('user/friends', { friends: friendsData });
+    res.render('/user/friends', { friends: friendsData });
   });
 });
 
