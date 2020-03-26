@@ -1,0 +1,17 @@
+.profile-container {
+  height: 100vh;
+  padding: 3% 5%;
+  text-align: center;
+}
+
+.profile-heading {
+  font-size: 1.5rem;
+}
+
+.profile-subheading {
+  font-size: 1rem;
+}
+
+.profile-subheading-sm {
+  font-size: 1rem;
+}

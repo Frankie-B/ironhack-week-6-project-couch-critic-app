@@ -1,18 +1,24 @@
 
-  <div class="profile-container row d-flex justify-content-center align-content-center">
-  <div class="profile-col col-12 d-flex justify-content-center">
-      <h1 class="profile-heading">Welcome {{user.username}}!</h1>
+  <div class="profile-container row d-flex justify-content-center align-items-center">
+  <div class="profile-col col-12 d-flex justify-content-center flex-column">
+    <h1 class="profile-heading">Welcome{{user.username}}!</h1>
+    <h3 class="profile-subheading"> We are glad that you are back</h2>
   </div>
-  <div class="profile-content col-12 d-flex justify-content-center">
-    <h2 class="profile-name"></h2>
-  </div>
-  <div class="profile-content col-12 d-flex justify-content-center">
-    <h2 class="profile-name">Your Rated Movies</h2>
-    <div class="profile-movies">{{user.rated_movies}}</div>
-  </div>
-  <div class="profile-content col-12 d-flex justify-content-center">
-    <h2 class="profile-name">Friends</h2>
+  <div class="profile-content col-12 d-flex justify-content-center m-0">
+      <div class="profile-movies-container row">
+        <div class="profile-movies col">
+          <h3 class="profile-subheading-sm">Your Rated Movies</h3>
+          <div class="profile-movies">{{user.rated_movies}}</div>
+          <h3 class="profile-subheading-sm">Movie Title</h2>
+          <h3 class="profile-subheading-sm">Movie Title</h2>
+          <h3 class="profile-subheading-sm">Movie Title</h2>
+          <h3 class="profile-subheading-sm">Movie Title</h2>
+          <h3 class="profile-subheading-sm">Movie Title</h2>
+        </div>
+      </div>
   </div> 
-  <a href="/user/add" class="profile-link"><button class="profile-btn btn btn-primary">Add Friend</button> </a>
-  <a href="/user/friends" class="profile-link"><button class="profile-btn btn btn-primary">View Friends</button></a> 
+  <div class="profile-btn-container">
+    <a href="/user/add" class="profile-link"><button class="profile-btn btn btn-primary">Add Friend</button> </a>
+    <a href="/user/friends" class="profile-link"><button class="profile-btn btn btn-primary">View Friends</button></a> 
+  </div>
 </div>
