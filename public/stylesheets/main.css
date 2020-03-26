@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.main-container {
+  color: #ffffff;
+  background-image: url('/images/stormTroopers.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.main-content {
+  text-align: center;
+  width: 80%;
+}
+
+.main-jumbotron.jumbotron {
+  background: transparent;
+}
+
+.main-text {
+  width: 95%;
+}
+
+.main-cta-text {
+  width: 85%;
+}
+
+.main-bold {
+  font-weight: bold;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .main-content {
+    margin-top: 10%;
+  }
+}

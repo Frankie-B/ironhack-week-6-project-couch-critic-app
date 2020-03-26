@@ -1,0 +1,14 @@
+<div class="friend-container card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="friendCard-container card-body row">
+    <div class="friend-card col-4">    
+      <h1 class="friend-title card-title">{{friendsData.username}}</h1>
+      <h4 class="friend-year">{{friendsData.firstName}}{{friendsData.lastName}}</h4>
+      <h3 class="friend-director">Rated Movies</h3>
+      <div class="movieLink-container">
+        <a class="btn btn-primary" href="/user/friend/{{friendsData._id}}">View Profile</a> 
+        <a class="btn btn-primary" href="/user/friend/delete/{{friendsData._id}}">delete friend</a>
+      </div> 
+    </div>
+  </div>
+</div>
