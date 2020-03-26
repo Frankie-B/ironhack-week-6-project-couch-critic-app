@@ -51,15 +51,15 @@ app.post('/addmovie/', (req, res, next) => {
 });
 
 //see all rated movies by user
-// app.get('/moviesrated', (req, res) => {
-//   Movie.find()
-//     .then(moviesData => {
-//       res.render('movies/moviesRated', { moviesHbs: moviesData });
-//     })
-//     .catch(err => {
-//       res.send('error');
-//     });
-// });
+app.get('/moviesrated', (req, res) => {
+  Movie.find()
+    .then(moviesData => {
+      res.render('movies/moviesRated', { moviesHbs: moviesData });
+    })
+    .catch(err => {
+      res.send('error');
+    });
+});
 
 
 
