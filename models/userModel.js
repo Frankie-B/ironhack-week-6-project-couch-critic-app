@@ -9,22 +9,27 @@ const userSchema = new Schema(
     email: { type: String, required: true },
     username: { type: String, required: true },
     password: { type: String, required: true },
+    movies: [ {
+                 type: mongoose.Schema.Types.ObjectId,
+                 ref: 'movies'
+    }],
   },
-  {
-    // friends: [{ type: ObjectId, ref: 'users' }],
-  },
-  {
-    rated_movies: [
-      {
-        // movie_rate: imdbID,
-        title: String,
-        thumbnail: String,
-        director: String,
-        year: Number,
-        rate: Number,
-      },
-    ],
-  },
+
+  // {
+  //   //friends: [{ type: ObjectId, ref: 'users' }],
+  // },
+  // {
+  //   rated_movies: [
+  //     {
+  //       // movie_rate: imdbID,
+  //       title: String,
+  //       thumbnail: String,
+  //       director: String,
+  //       year: Number,
+  //       rate: Number,
+  //     },
+  //   ],
+  // },
   {
     timestamps: true, // display time stamp user is created
   }
