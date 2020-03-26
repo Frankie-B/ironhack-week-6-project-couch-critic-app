@@ -1,10 +1,10 @@
 <div class="signup-container container-fluid row">
   <div class="signup-form col">
     <form action="/user/signup" method="POST">
-      <input class="signup-input form-control" pattern="/^[A-Za-z]+$/" type="text" required name="firstName" placeholder="First Name"/>
-      <input class="signup-input form-control" type="text" pattern="/^[A-Za-z]+$/" required name="lastName" placeholder="Last Name"/>
-      <input class="signup-input form-control" type="email" required name="email" placeholder="youremail@email.com"/>
-      <input class="signup-input form-control" type="text" pattern="/[A-Za-z0-9_]{1,15}/" required name="username" placeholder="username" />
+      <input class="signup-input form-control" pattern="^[A-Za-z]+$" type="text" required name="firstName" placeholder="First Name"/>
+      <input class="signup-input form-control" type="text" pattern="^[A-Za-z]+$" required name="lastName" placeholder="Last Name"/>
+      <input class="signup-input form-control" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required name="email" placeholder="youremail@email.com"/>
+      <input class="signup-input form-control" type="text" pattern="[A-Za-z0-9_]{1,15}" required name="username" placeholder="username" />
       <input class="signup-input form-control" type="password"  required name="password" placeholder="password" />
       <button type="submit">Sign up</button>
       <div class="signup-small-container">
