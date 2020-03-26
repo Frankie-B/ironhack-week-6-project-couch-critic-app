@@ -1,4 +1,3 @@
-// /////////////////////////////////////////////////////////////////////////////
 const express = require('express');
 const app = express();
 const axios = require('axios');
@@ -19,8 +18,6 @@ app.get('/moviedetail', (req, res) => {
   res.render('movies/movieDetail');
 });
 
-// //  show all movies in database mongoDB
-// change all the TTTT
 app.get('/moviesrated', (req, res) => {
   Movie.find()
     .then(moviesData => {
@@ -30,7 +27,6 @@ app.get('/moviesrated', (req, res) => {
       res.send('error');
     });
 });
-
 
 app.get('/addmovie', (req, res) => {
   res.render('movies/addMovie');
@@ -49,7 +45,6 @@ app.post('/addmovie', (req, res) => {
       res.send('error');
     });
 });
-
 
 // app.get('/movie/detail/:movieId', (req, res) => {
 //   Movie.findById(req.params.movieId)

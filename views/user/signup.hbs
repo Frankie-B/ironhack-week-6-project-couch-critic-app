@@ -1,11 +1,11 @@
 <div class="signup-container container-fluid row">
-  <div class="col">
+  <div class="signup-form col">
     <form action="/user/signup" method="POST">
-      <input class="signup-input form-control" type="text" required name="firstName" placeholder="First Name"/>
-      <input class="signup-input form-control" type="text" required name="lastName" placeholder="Last Name"/>
+      <input class="signup-input form-control" pattern="/^[A-Za-z]+$/" type="text" required name="firstName" placeholder="First Name"/>
+      <input class="signup-input form-control" type="text" pattern="/^[A-Za-z]+$/" required name="lastName" placeholder="Last Name"/>
       <input class="signup-input form-control" type="email" required name="email" placeholder="youremail@email.com"/>
-      <input class="signup-input form-control" type="text" required name="username" placeholder="username" />
-      <input class="signup-input form-control" type="password" required name="password" placeholder="password" />
+      <input class="signup-input form-control" type="text" pattern="/[A-Za-z0-9_]{1,15}/" required name="username" placeholder="username" />
+      <input class="signup-input form-control" type="password"  required name="password" placeholder="password" />
       <button type="submit">Sign up</button>
       <div class="signup-small-container">
         <small class="signup-small">If you already have an account please <a href="/user/login" class="signup-link">Click Here</a> to log in</small>
