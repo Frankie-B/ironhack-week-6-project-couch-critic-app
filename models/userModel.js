@@ -4,15 +4,57 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    email: { type: String, required: true },
-    username: { type: String, required: true },
-    password: { type: String, required: true },
-    movies: [ {
-                 type: mongoose.Schema.Types.ObjectId,
-                 ref: 'movies'
-    }],
+    firstName: {
+      type: String,
+      trim: true,
+      validate: {
+        validator: function(v) {
+          return /^[A-Za-z]+$/.test(v);
+        },
+        message: props => `${props.value} is not a valid name!`,
+      },
+      required: true,
+    },
+    lastName: {
+      type: String,
+      trim: true,
+      validate: {
+        validator: function(v) {
+          return /^[A-Za-z]+$/.test(v);
+        },
+        message: props => `${props.value} is not a valid name!`,
+      },
+      required: true,
+    },
+    email: {
+      type: String,
+      trim: true,
+      validate: {
+        validator: function(v) {
+          return /[^@]+@[^@]+\.[a-zA-Z]{2,6}/.test(v);
+        },
+        message: props => `${props.value} is not a valid email!`,
+      },
+      required: true,
+    },
+    username: {
+      type: String,
+      trim: true,
+      validate: {
+        validator: function(v) {
+          return /[A-Za-z0-9_]{1,15}/.test(v);
+        },
+        message: props => `${props.value} is not a valid username!`,
+      },
+      required: true,
+    },
+    password: { type: String, trim: true, required: true },
+    movies: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movies',
+      },
+    ],
   },
 
   // {
