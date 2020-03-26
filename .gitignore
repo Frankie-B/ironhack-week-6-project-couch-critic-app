@@ -2,4 +2,6 @@
 node_modules
 
 # Settings
-.vscodenode_modules
+.vscode
+
+node_modules
