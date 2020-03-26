@@ -56,9 +56,11 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/user/profile', protect);
-// app.use('/user/friends', protect);
-// app.use('/user/friend', protect);
+// Protected routes
+app.use('/user/profile', protect);
+app.use('/user/friends', protect);
+app.use('/user/friend', protect);
+app.use('/movies', protect);
 
 // routes
 app.use('/', require('./routes/index'));

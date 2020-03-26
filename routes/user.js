@@ -71,4 +71,16 @@ app.get('/profile', (req, res) => {
   res.render('user/profile');
 });
 
+// Displaying the details for current user from the database
+app.get('/profile/:userId', (req, res) => {
+  User.findById(req.session.currentUser._id)
+    .then(userData => {
+      res.render('user/profile', { user: userData });
+      console.log(user, userData);
+    })
+    .catch(err => {
+      console.log('User not found');
+    });
+});
+
 module.exports = app;

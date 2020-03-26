@@ -1,20 +1,18 @@
-<div class="profile-container row d-flex justify-content-center align-content-center">
+
+  <div class="profile-container row d-flex justify-content-center align-content-center">
   <div class="profile-col col-12 d-flex justify-content-center">
-      <h1 class="profile-heading">Welcome {{!Also include username}}!</h1>
+      <h1 class="profile-heading">Welcome {{user.username}}!</h1>
   </div>
   <div class="profile-content col-12 d-flex justify-content-center">
-    {{! Add here the user name}}
-    <h2 class="profile-name">Username</h2>
+    <h2 class="profile-name"></h2>
   </div>
   <div class="profile-content col-12 d-flex justify-content-center">
-    {{! Add here the rated movies}}
-    <h2 class="profile-name">Rated Movies</h2>
+    <h2 class="profile-name">Your Rated Movies</h2>
+    <div class="profile-movies">{{user.rated_movies}}</div>
   </div>
   <div class="profile-content col-12 d-flex justify-content-center">
-    {{! Add here the user name}}
     <h2 class="profile-name">Friends</h2>
-    <ul class="profile-friends">
-      <li class="profile-item"><a href="#" class="profile-li">Friend Name</a></li>
-    </ul>
-  </div>  
+  </div> 
+  <a href="/user/add" class="profile-link"><button class="profile-btn btn btn-primary">Add Friend</button> </a>
+  <a href="/user/friends" class="profile-link"><button class="profile-btn btn btn-primary">View Friends</button></a> 
 </div>

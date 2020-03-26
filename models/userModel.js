@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
-  { 
+  {
     firstName: String,
     lastName: String,
     email: String,
@@ -11,7 +11,7 @@ const userSchema = new Schema(
     password: String,
   },
   {
-    //friends: [{ type: ObjectId, ref: 'users' }],
+    // friends: [{ type: ObjectId, ref: 'users' }],
   },
   {
     rated_movies: [

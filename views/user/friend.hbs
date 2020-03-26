@@ -1,13 +1,13 @@
 <div class="friend-container"> 
   <div class="friend-text">
     <h1 class="friend-name">{{friendData.username}}</h1>
-    <h5 class="friend-tagline">{{friendData.firstName}}{{friendData.lastName}}</h5>
+    <h5 class="friend-name">{{friendData.firstName}}{{friendData.lastName}}</h5>
     <br>
     <div class="friend-subContainer">
       <h3 class="friend-subheading">{{friendData.rated_movies}}</h3>
     </div>
     <div class="friend-btn">
-       <a href="user/friends/{{friendData._id}}"><button class="friend-edit">Remove Friend</button></a>
+       <a href="/user/friends/{{friendData._id}}"><button class="friend-edit">Remove Friend</button></a>
     </div>   
   </div>
 </div>
