@@ -60,7 +60,7 @@ app.post('/addmovie/', (req, res, next) => {
     });
 });
 
-//see all rated movies by user
+//see all rated movies by all users
 app.get('/moviesrated', (req, res) => {
   Movie.find()
     .then(moviesData => {
