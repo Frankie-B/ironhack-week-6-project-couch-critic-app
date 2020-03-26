@@ -53,14 +53,14 @@ app.post('/addmovie/', (req, res, next) => {
     })
     .then(user => {
       console.log(user);
-      res.redirect(`/moviesRatedByUser`);
+      res.redirect(`/moviesRated`);
     })
     .catch(error => {
       console.log(error);
     });
 });
 
-//see all rated movies by all users
+//see all rated movies by user
 app.get('/moviesrated', (req, res) => {
   Movie.find()
     .then(moviesData => {
