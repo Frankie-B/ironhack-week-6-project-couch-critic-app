@@ -1,15 +1,25 @@
-<div class="signup-container container-fluid row">
+<div class="signup-container container-fluid d-flex justify-content-center">
+  <div class="signup-content  d-flex justify-content-center align-items-center flex-column  row">
+  <div class="signup-heading-container col">
+    <h1 class="signup-heading">So How About We Make This Official?</h1>
+  </div>
   <div class="signup-form col">
-    <form action="/user/signup" method="POST">
-      <input class="signup-input form-control" pattern="/^[A-Za-z]+$/" type="text" required name="firstName" placeholder="First Name"/>
-      <input class="signup-input form-control" type="text" pattern="/^[A-Za-z]+$/" required name="lastName" placeholder="Last Name"/>
-      <input class="signup-input form-control" type="email" required name="email" placeholder="youremail@email.com"/>
-      <input class="signup-input form-control" type="text" pattern="/[A-Za-z0-9_]{1,15}/" required name="username" placeholder="username" />
-      <input class="signup-input form-control" type="password"  required name="password" placeholder="password" />
-      <button type="submit">Sign up</button>
-      <div class="signup-small-container">
-        <small class="signup-small">If you already have an account please <a href="/user/login" class="signup-link">Click Here</a> to log in</small>
-      </div>
-    </form>
-  <div/>
+      <form action="/user/signup" method="POST">
+        <label for="firstName">First Name <small>(Only letters allowed)</small>:</label>
+        <input class="signup-input form-control" pattern="^[A-Za-z]+$" type="text" required name="firstName" placeholder="First Name"/>
+        <label for="lastName">Last Name <small>(Only letters allowed)</small>:</label>
+        <input class="signup-input form-control" type="text" pattern="^[A-Za-z]+$" required name="lastName" placeholder="Last Name"/>
+        <label for="email">Email <small>(Must be a valid email)</small>:</label>
+        <input class="signup-input form-control" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required name="email" placeholder="youremail@email.com"/>
+        <label for="username">Username <small>(cannot be more than 15 characters)</small>:</label>
+        <input class="signup-input form-control" type="text" pattern="[A-Za-z0-9_]{1,15}" required name="username" placeholder="Username" />
+        <label for="password">Password <small>(Enter a password)</small>:</label>
+        <input class="signup-input form-control" type="password"  required name="password" placeholder="Password" />
+        <button class="signup-btn btn btn-primary" type="submit">Sign up</button>
+        <div class="signup-small-container">
+          <small class="signup-small">If you already have an account please <a href="/user/login" class="signup-link">Click Here</a> to log in</small>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

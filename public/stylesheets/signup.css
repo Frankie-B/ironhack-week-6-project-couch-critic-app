@@ -1,0 +1,24 @@
+.signup-heading-container {
+  height: 100vh;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.signup-heading {
+  font-size: 1rem;
+}
+
+.signup-btn {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.signup-small {
+  margin-bottom: 1%;
+}
+
+@media (min-width: 992px) {
+  .signup-heading {
+    font-size: 2rem;
+  }
+}
