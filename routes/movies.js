@@ -3,7 +3,10 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const Movie = require('../models/MovieModel');
+const User = require('../models/userModel');
+const mongoose = require('mongoose');
 
+//search function to display all movies that are available in the movie API
 app.post('/moviedetail', (req, res) => {
   axios
     .get(`http://www.omdbapi.com/?t=${req.body.movieSearch}&APIkey=a4adc5f`)
@@ -19,37 +22,76 @@ app.get('/moviedetail', (req, res) => {
   res.render('movies/movieDetail');
 });
 
-// //  show all movies in database mongoDB
-// change all the TTTT
-app.get('/moviesrated', (req, res) => {
-  Movie.find()
-    .then(moviesData => {
-      res.render('movies/moviesRated', { moviesHbs: moviesData });
-    })
-    .catch(err => {
-      res.send('error');
-    });
-});
-
-
-app.get('/addmovie', (req, res) => {
+/// user can add movies to their own account and rate them
+app.get('/addmovie/', (req, res) => {
   res.render('movies/addMovie');
 });
 
-app.post('/addmovie', (req, res) => {
-  console.log(req.body);
+app.post('/addmovie/', (req, res, next) => {
   Movie.create({
     Title: req.body.title,
     Rating: req.body.rating,
   })
-    .then(moviesData => {
-      res.render('movies/moviesRated', { moviesHbs: moviesData });
+    .then(movie => {
+      console.log(req.session.currentUser);
+      console.log(movie);
+      return User.findOneAndUpdate(
+        { _id: req.session.currentUser._id },
+        { $push: { movies: mongoose.Types.ObjectId(movie._id) } },
+                { new: true }
+      );
     })
-    .catch(err => {
-      res.send('error');
+    .then(user => {
+      console.log(user);
+      res.redirect(`/moviesRatedByUser`);
+    })
+    .catch(error => {
+      console.log(error);
     });
 });
 
+//see all rated movies by user
+// app.get('/moviesrated', (req, res) => {
+//   Movie.find()
+//     .then(moviesData => {
+//       res.render('movies/moviesRated', { moviesHbs: moviesData });
+//     })
+//     .catch(err => {
+//       res.send('error');
+//     });
+// });
+
+
+
+// // //  show all movies in database mongoDB
+// // change all the TTTT
+// app.get('/moviesrated', (req, res) => {
+//   Movie.find()
+//     .then(moviesData => {
+//       res.render('movies/moviesRated', { moviesHbs: moviesData });
+//     })
+//     .catch(err => {
+//       res.send('error');
+//     });
+// });
+
+// app.get('/addmovie', (req, res) => {
+//   res.render('movies/addMovie');
+// });
+
+// app.post('/addmovie', (req, res) => {
+//   console.log(req.body);
+//   Movie.create({
+//     Title: req.body.title,
+//     Rating: req.body.rating,
+//   })
+//     .then(moviesData => {
+//       res.render('movies/moviesRated', { moviesHbs: moviesData });
+//     })
+//     .catch(err => {
+//       res.send('error');
+//     });
+// });
 
 // app.get('/movie/detail/:movieId', (req, res) => {
 //   Movie.findById(req.params.movieId)
@@ -132,27 +174,27 @@ app.post('/addmovie', (req, res) => {
 //     });
 // });
 
-module.exports = app;
+// module.exports = app;
 
-app.get('/create', (req, res) => {
-  res.render('movies/createMovie');
-});
+// app.get('/create', (req, res) => {
+//   res.render('movies/createMovie');
+// });
 
-app.post('/create', (req, res) => {
-  console.log(req.body);
-  Movie.create({
-    title: req.body.title,
-    director: req.body.director,
-    year: req.body.year,
-  })
-    .then(movie => {
-      res.redirect(`/movie/detail/${movie._id}`);
-    })
-    .catch(err => {
-      res.send('error');
-    });
-  // res.render("createMovie");
-});
+// app.post('/create', (req, res) => {
+//   console.log(req.body);
+//   Movie.create({
+//     title: req.body.title,
+//     director: req.body.director,
+//     year: req.body.year,
+//   })
+//     .then(movie => {
+//       res.redirect(`/movie/detail/${movie._id}`);
+//     })
+//     .catch(err => {
+//       res.send('error');
+//     });
+//   // res.render("createMovie");
+// });
 
 module.exports = app;
 
