@@ -1,7 +1,8 @@
 @import './footer.css';
+@import './logout.css';
 @import './login.css';
 @import './signup.css';
-@import './buttons.css';
+@import './addMovie.css';
 @import './movieDetail.css';
 @import './profile.css';
 @import './nav.css';

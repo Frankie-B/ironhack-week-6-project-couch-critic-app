@@ -8,3 +8,19 @@
 </div>  
 <div class= "image-container-addmovie container-fluid d-flex justify-content-center align-items-start row m-0 pt-5">
 </div>
+
+
+<div class="add-movie-container container-fluid d-flex justify-content-center  m-0 pt-5">
+  <div class="add-movie-container d-flex flex-column align-items-center justify-content-center row">
+  <div class="col">
+    <h1 class="add-movie-heading">Why don't you add a movie to you collection</h1>
+  </div>
+  <div class="add-movie-content col">
+    <form  action="/addmovie" method="POST">
+        <input class="add-movie-input form-control p-0 m-0" type="text" name="title" placeholder="Movie Title">
+        <input class="add-movie-input form-control p-0 m-0" type="number" name="rating" placeholder=" Rating: 1 - 10">
+      <button class="add-movie-btn btn btn-primary" type="submit">Add Movie</button>
+    </form>
+ </div>
+</div>
+</div>
