@@ -1,4 +1,5 @@
-
+{{#each movies}}
+{{/each}}
 <h1>Movie details</h1>
 <div class="search">
   <form action="/movieDetail" method="POST">
@@ -10,13 +11,23 @@
   </form> 
 </div>
 
-{{#each movies}}
-{{/each}}
 
-<img src="{{movie.Poster}}" alt="poster">
- <h1>{{movie.Title}}</h1>
- <p>This movie was directed by {{movie.Director}} released on {{movie.Released}}. </p>
 
-<div id="error"></div>
+
+
+
+
 
 <script src="/public/javascripts/movies.js"></script>
+
+
+<div class="card" style="width: 18rem;">
+  <img class="movie-detail-img" src="{{movie.Poster}}" alt="poster">
+  <div class="card-body">
+     <h2 class="movie-detail-heading" >{{movie.Title}}</h2>
+     <p class="movie-detail-text" >This movie was directed by {{movie.Director}} released on {{movie.Released}}. </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div id="error"></div>
