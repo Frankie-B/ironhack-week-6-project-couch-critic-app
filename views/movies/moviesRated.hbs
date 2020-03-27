@@ -1,5 +1,15 @@
-{{#each moviesHbs}}
-    <h1>{{Title}}</h1>
-    <h2>{{Rating}}</h2>
+<div class="container-ratedmovies-text">
+  <div class="d-flex justify-content-center align-items-center">
+     <div class="col">Title movie</div>
+      <div class="col">Rating given by users</div>
+  </div> 
+</div>
 
+{{#each moviesHbs}}
+<div class="container-ratedmovies-movies">
+  <div class="d-flex justify-content-center align-items-center">
+   <div class="col">{{Title}}</div>
+    <div class="col">{{Rating}}</div>
+  </div>
+</div> 
 {{/each}}
