@@ -1,0 +1,38 @@
+.image-container-addmovie {
+  color: #ffffff;
+  background-image: url('/images/addmoviesmallscreen2.jpg');
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.add-movie-container{
+  padding: 20px;
+}
+
+.title-input, .rating-input, .addmovie-button {
+margin: 10px;
+width: 60vw;
+text-align: center;
+}
+
+.title-input, .rating-input{
+  border-color:#343A40;
+  color: #999C99; 
+}
+
+.addmovie-button {
+  border-color:#343A40;
+  color: #999C99;
+}
+
+@media (min-width: 700px) {
+  .image-container-addmovie {
+    background-image: url('/images/addmovielargescreen2.jpg');
+  }
+
+  .title-input, .rating-input, .addmovie-button {
+    width: 35vw;
+  }
+}
