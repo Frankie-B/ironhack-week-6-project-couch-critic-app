@@ -1,0 +1,19 @@
+.login-heading-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.login-heading {
+  font-size: 1rem;
+}
+
+.login-btn {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .login-heading {
+    font-size: 2rem;
+  }
+}
