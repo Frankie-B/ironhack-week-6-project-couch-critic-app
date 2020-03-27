@@ -60,6 +60,8 @@ app.use('/user/profile', protect);
 // app.use('/user/friends', protect);
 // app.use('/user/friend', protect);
 app.use('/movies', protect);
+app.use('/addmovie', protect);
+app.use('/moviesrated', protect);
 
 // routes
 app.use('/', require('./routes/index'));

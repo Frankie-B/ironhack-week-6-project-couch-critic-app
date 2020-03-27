@@ -1,0 +1,16 @@
+#footer {
+  color: #ffffff;
+  position: fixed;
+  height: 50px;
+  background-color: #182631;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-top: 1%;
+}
+
+.fa-heart {
+  color: red;
+}

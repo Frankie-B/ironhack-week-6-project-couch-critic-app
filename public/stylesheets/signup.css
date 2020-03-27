@@ -1,5 +1,6 @@
 .signup-heading-container {
-  margin-top: 2rem;
+  height: 100vh;
+  margin-top: 0.75rem;
   text-align: center;
 }
 
@@ -8,8 +9,12 @@
 }
 
 .signup-btn {
-  margin-top: 2rem;
+  margin: 1.5rem 0;
   width: 100%;
+}
+
+.signup-small {
+  margin-bottom: 1%;
 }
 
 @media (min-width: 992px) {
