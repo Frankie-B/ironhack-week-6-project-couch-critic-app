@@ -1,13 +1,15 @@
-# ironhack-week-6-project-movie-app (MovieBuddies)
+# ironhack-week-6-project-couch-critic-app (CouchCritic)
 
-## MovieBuddies
+## CouchCritic
 
 ### Module 2 Project - Full Stack - Movie Goer App Created by Miranda Kamp &amp; Francis Bukenya
 
 Write description about our app below here:
 
-Features:
+Technologies:
+
+HTML | CSS | BOOTSTRAP | JAVASCRIPT | EXPRESS | NODEJS | HANDLEBARS MONGODB |
 
 Link:
 
-[App title](https://google.com)
+Deployed CouchCritic app: (https://couchcritic.herokuapp.com/)

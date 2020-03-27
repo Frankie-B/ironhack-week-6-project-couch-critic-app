@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  position: relative;
+}
+
 .main-container {
   color: #ffffff;
   background-image: url('/images/stormTroopersLarge.jpg');
@@ -19,7 +23,6 @@ body {
   background-size: cover;
   height: 100%;
 }
-
 
 .main-content {
   text-align: center;
