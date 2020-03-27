@@ -1,7 +1,4 @@
-# Directories
-node_modules
-
-# Settings
+# Ignore these 
 .vscode
 
 node_modules
