@@ -1,15 +1,18 @@
-<div class="container-ratedmovies-text">
-  <div class="d-flex justify-content-center align-items-center">
-     <div class="col">Title movie</div>
-      <div class="col">Rating given by users</div>
+<div class="container-ratedmovies m-lg-5">
+<div class="container-ratedmovies-text m-2">
+  <div class="d-flex justify-content-center align-items-center ">
+     <div class="col m-2"><strong>Title movie</strong></div>
+      <div class="col m-2"><strong>Rating given by users</strong></div>
   </div> 
 </div>
 
 {{#each moviesHbs}}
-<div class="container-ratedmovies-movies">
+<div class="container-ratedmovies-movies m-2 ">
   <div class="d-flex justify-content-center align-items-center">
-   <div class="col">{{Title}}</div>
-    <div class="col">{{Rating}}</div>
+   <div class="col m-2">{{Title}}</div>
+    <div class="col m-2">{{Rating}}</div>
   </div>
 </div> 
 {{/each}}
+
+</div>

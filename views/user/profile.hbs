@@ -1,26 +1,28 @@
 
-  <div class="profile-container row d-flex justify-content-center align-items-center">
-    <div class="profile-bg">
+  
+  <div class="profile-container row d-flex justify-content-center">
       <div class="profile-col col-12 d-flex justify-content-center flex-column m-0">
-        <h1 class="profile-heading">Welcome{{user.username}}!</h1>
-        <h3 class="profile-subheading"> We are glad that you are back</h2>
-    </div>
-    <div class="profile-content col-12 d-flex justify-content-center m-0">
-      <div class="profile-movies-container row">
-        <div class="profile-movies col">
-          <h3 class="profile-subheading-sm">Your Rated Movies</h3>
-          <div class="profile-movies">{{user.rated_movies}}</div>
-          <h3 class="profile-subheading-sm">Movie Title</h2>
-          <h3 class="profile-subheading-sm">Movie Title</h2>
-          <h3 class="profile-subheading-sm">Movie Title</h2>
-          <h3 class="profile-subheading-sm">Movie Title</h2>
-          <h3 class="profile-subheading-sm">Movie Title</h2>
-        </div>
+        <h1 class="profile-heading m-2">Welcome{{user.username}}!</h1>
+        <h3 class="profile-subheading m-3"> We are glad that you are back</h2>
+      </div> 
+      <div class="profile-btn-container">
+        <a href="/addMovie" class="profile-link"><button class="profile-btn btn btn-primary bg-dark m-1 m-lg-3">Add Movie</button> </a>
+        <a href="/movieDetail" class="profile-link"><button class="profile-btn btn btn-primary bg-dark m-1 m-lg-3">Search Movie</button></a>
+        <a href="/moviesRated" class="profile-link"><button class="profile-btn btn btn-primary bg-dark m-1 m-lg-3">See Ranking</button></a>
       </div>
-    </div> 
-    <div class="profile-btn-container">
-      <a href="/user/add" class="profile-link"><button class="profile-btn btn btn-primary">Add Friend</button> </a>
-      <a href="/user/friends" class="profile-link"><button class="profile-btn btn btn-primary">View Friends</button></a> 
-    </div>
-   </div>
+      <div class= "image-container-profile container-fluid d-flex justify-content-center align-items-start row m-0 pt-5">
+      </div>
 </div>
+
+
+
+{{!-- <div class= "add-movie-container">
+    <form class="addmovie-form d-flex justify-content-center align-items-center flex-column row " action="/addmovie" method="POST">
+        <input class="title-input" type="text" name="title" placeholder="Title of the movie">
+        <input class="rating-input" type="number" name="rating" placeholder="Rating on scale of 1 - 10">
+        <button class="addmovie-button bg-dark" type="submit">Add Movie</button>
+    </form>
+  </div>
+</div>  
+<div class= "image-container-addmovie container-fluid d-flex justify-content-center align-items-start row m-0 pt-5">
+</div> --}}
