@@ -1,7 +1,7 @@
 .image-container-addmovie {
   color: #ffffff;
   background-image: url('/images/addmoviesmallscreen2.jpg');
-  background-position: center;
+  background-position: center; 
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -10,14 +10,12 @@
 
 .addmovie-button {
   color: white;
-  border-color: #343a40;
+  border-color: #343A40;
 }
 
-.addmovie-button,
-.rating-input,
-.title-input {
+.addmovie-button, .rating-input, .title-input {
   margin: 10px;
-  border-color: #999c99;
+  border-color: #999C99;
   width: 70vw;
   text-align: center;
   border-radius: 5px;
@@ -27,9 +25,8 @@
   .image-container-addmovie {
     background-image: url('/images/addmovielargescreen2.jpg');
   }
-  .addmovie-button,
-  .rating-input,
-  .title-input {
+  .addmovie-button, .rating-input, .title-input {
     width: 40vw;
-  }
 }
+}
+
