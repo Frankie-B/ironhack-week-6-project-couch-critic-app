@@ -1,11 +1,5 @@
-.ratedmovies-text {
-  margin: 100px;
-  font-size: 1.2rem ;
-  color:red;
-}
-
-
-.ratedmovies-movies {
-  font-size: 1rem;
-  color: red;
+@media (min-width: 700px) {
+  .container-ratedmovies {
+   width: 70vw;
+  }
 }
