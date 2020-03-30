@@ -3,12 +3,10 @@ const app = express();
 const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 
-// GET request for user route
 app.get('/signup', (req, res) => {
   res.render('user/signup');
 });
 
-//User signup with auth.
 app.post('/signup', (req, res, next) => {
   const { username, password, firstName, lastName, email } = req.body;
   bcrypt.hash(password, 10, function(error, hash) {
@@ -16,7 +14,6 @@ app.post('/signup', (req, res, next) => {
       next('Hashing error');
     } else {
       User.create({
-        // add file_upload here
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -33,7 +30,6 @@ app.post('/signup', (req, res, next) => {
   });
 });
 
-// GET/POST for the user login
 app.get('/login', (req, res) => {
   res.render('user/login');
 });
@@ -71,7 +67,6 @@ app.get('/profile', (req, res) => {
   res.render('user/profile');
 });
 
-// Displaying the details for current user from the database
 app.get('/profile/:userId', (req, res) => {
   User.findById(req.session.currentUser._id)
     .then(userData => {

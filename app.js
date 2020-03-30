@@ -1,5 +1,5 @@
 require('dotenv').config();
-// Required dependencies
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -9,11 +9,9 @@ const hbs = require('hbs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// dependencies for cookie sessions
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-//Starting cookie session for user
 app.use(
   session({
     secret: 'basic-auth-secret',
@@ -25,7 +23,6 @@ app.use(
   })
 );
 
-// Connection to the database
 mongoose
   .connect(process.env.db, {
     useCreateIndex: true,
@@ -39,7 +36,6 @@ mongoose
     console.log('Unexpected error, connection failed!', error);
   });
 
-//Protection function for routes if user is not logged in
 function protect(req, res, next) {
   if (req.session.currentUser) {
     next();
@@ -48,7 +44,6 @@ function protect(req, res, next) {
   }
 }
 
-// Setting up Handlebars
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -57,20 +52,17 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/user/profile', protect);
-// app.use('/user/friends', protect);
-// app.use('/user/friend', protect);
 app.use('/movies', protect);
 app.use('/addmovie', protect);
 app.use('/moviesrated', protect);
+app.use('/moviedetail', protect);
 
-// routes
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user'));
 app.use('/', require('./routes/movies'));
 app.use('/', require('./routes/friends'));
 app.use('/', require('./routes/logout'));
 
-// listening on port 3000
 app.listen(process.env.PORT, () => {
   console.log('app listening on', process.env.PORT);
 });

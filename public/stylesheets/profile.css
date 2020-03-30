@@ -1,6 +1,5 @@
 .profile-container {
   height: 100vh;
-  padding: 3% 5%;
   text-align: center;
 }
 
@@ -14,4 +13,26 @@
 
 .profile-subheading-sm {
   font-size: 1rem;
+}
+
+.profile-btn {
+  border-color:#343A40;
+  color: #999C99;
+}
+
+.image-container-profile {
+  color: #ffffff;
+  background-image: url('/images/profilesmallscreen.jpg');
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 0%;
+}
+
+
+@media (min-width: 700px) {
+  .image-container-profile {
+    background-image: url('/images/profilelargescreen.jpg');
+  }
 }
